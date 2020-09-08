@@ -1,0 +1,38 @@
+<html>
+<BODY>
+
+
+<canvas width='500' height='500' id='hw01'>
+</canvas>
+
+	<script>
+
+	var canvas = document.getElementById('hw01');
+	var ctx = canvas.getContext('2d');
+	var x = 0;
+	
+	
+	
+	
+setInterval(function(){	
+	
+	drawSin()
+	
+	function drawSin()
+{
+	for(let i = 0; i<=1; i++)
+	{
+	y = 100+Math.sin(0.9*x);
+	x+= 0.5;
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillRect(x, y, 3, 3);
+	 
+
+	}
+}
+
+}, 80);
+	</script>
+
+</BODY>
+</html>
