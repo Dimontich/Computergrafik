@@ -1,0 +1,64 @@
+<HTML>
+<BODY>
+	
+<canvas width='2800' height='1000' id='hw02'>
+</canvas>
+
+<script>
+	var canvas = document.getElementById('hw02');
+	var ctx = canvas.getContext('2d');
+
+	let img = new Image;
+	img.crossOrigin = 'Priora';
+	img.src = 'https://img1.goodfon.ru/original/1280x1024/4/2c/vaz-bpan-lada-avto-mashina-3025.jpg';
+
+	img.onload = function() {
+
+	ctx.drawImage(img, 0, 0, img.width, img.height);
+	let img_data = ctx.getImageData(0,0, img.width, img.height);
+	var red, green, blue, greyscale;
+
+	for (var i = 0; i < img_data.data.length; i += 4) {
+		red = img_data.data[i]; 
+		green = img_data.data[i + 1]; 
+		blue = img_data.data[i + 2]; 
+		greyscale = ( red + green + blue ) / 3;
+
+		img_data.data[i] = greyscale; 
+		img_data.data[i + 1] = greyscale;
+		img_data.data[i + 2] = greyscale;
+	}
+
+	ctx.putImageData(img_data, img.width + 25, 0);
+	};
+
+</script>
+
+</BODY>
+</HTML>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+</BODY>
+</html>
